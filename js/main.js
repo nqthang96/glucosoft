@@ -1,0 +1,11 @@
+function mobbtn() { $("#main-navbar").slideToggle(700) };
+
+function mobbtn1() { $("#main-navbar").slideUp(700) };
+$(document).ready(function() { $(".product-single").click(function() { $(".product-single").removeClass("selectedBox"), $(this).addClass("selectedBox") }), $(".toBoxes").click(function() { $("html, body").animate({ scrollTop: $(".anchor").offset().top }, 600) }) });
+
+function startTimer(e) { var t, n, o = e;
+    setInterval(function() { t = parseInt(o / 60, 10), n = parseInt(o % 60, 10), t = t < 10 ? "0" + t : t, n = n < 10 ? "0" + n : n, document.querySelector("#hours").textContent = "00", document.querySelector("#minutes").textContent = t, document.querySelector("#seconds").textContent = n, document.querySelector("#hours2").textContent = "00", document.querySelector("#minutes2").textContent = t, document.querySelector("#seconds2").textContent = n, document.querySelector("#hours3").textContent = "00", document.querySelector("#minutes3").textContent = t, document.querySelector("#seconds3").textContent = n, --o < 0 && (o = e) }, 1e3) }
+var mins = 900;
+startTimer(mins);
+$(window).scroll(function() { 0 < $(document).scrollTop() ? $("#nav").addClass("nav_scroll") && $("#nav-delivery").addClass("disp-none") : $("#nav").removeClass("nav_scroll") && $("#nav-delivery").removeClass("disp-none") });
+$(document).on("ready", function() { $(".lazy1").slick({ autoplay: !0, autoplaySpeed: 12e3, speed: 1e3, slidesToShow: 3, slidesToScroll: 1, centerMode: !0, arrows: !0, dots: !1, infinite: !0, responsive: [{ breakpoint: 1200, settings: { centerMode: !1, slidesToShow: 3, slidesToScroll: 1 } }, { breakpoint: 1e3, settings: { centerMode: !1, slidesToShow: 2, slidesToScroll: 1 } }, { breakpoint: 600, settings: { centerMode: !1, slidesToShow: 1, slidesToScroll: 1 } }] }), $(".lazy2").slick({ autoplay: !1, autoplaySpeed: 1e3, speed: 700, arrows: !1, dots: !0, infinite: !0, responsive: [{ breakpoint: 5e3, settings: "unslick" }, { breakpoint: 1300, settings: { slidesToShow: 3, slidesToScroll: 1 } }, { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } }] }) });
